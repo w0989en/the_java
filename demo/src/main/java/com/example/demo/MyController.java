@@ -9,8 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class MyController {
 
     @Autowired
-    @Qualifier("canonPrinter")
+    @Qualifier("hpPrinter")
     private Printer printer;
+
+//    @Autowired
+//    @Qualifier("canonPrinter")
+//    private Printer printer;
 
 //    private final Printer printer;
 //    public MyController(@Qualifier("canonPrinter") Printer printer) {
@@ -19,7 +23,7 @@ public class MyController {
 
     @RequestMapping("/test")
     public String test(){
-        printer.print("aaaa");
+        printer.print("in Mycontroller...");
         return "Hi~~~~~";
     }
 }
